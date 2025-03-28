@@ -1,6 +1,6 @@
 import React from 'react'
-import { Typography, Box } from '@mui/material'
 import TicketList from '../components/tickets/TicketList'
+import { Typography, Box } from '@mui/material'
 
 const Tickets = () => {
   return (

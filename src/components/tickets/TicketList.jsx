@@ -15,6 +15,8 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useTickets } from '../../hooks/useTickets'
 
+console.log('TicketList montado')
+
 const TicketList = () => {
   const { tickets, loading, deleteTicket } = useTickets()
 
@@ -25,11 +27,20 @@ const TicketList = () => {
     }
   }
 
+  
+
   return (
     <Paper sx={{ p: 2 }}>
       <Typography variant="h5" gutterBottom>
         Tickets List
       </Typography>
+
+      return (
+    <div style={{ color: 'red', fontSize: '30px' }}>
+    TicketList cargado
+    </div>
+)
+
 
       {loading ? (
         <Box display="flex" justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
