@@ -6,6 +6,11 @@ import { ApiProvider } from './context/ApiContext.jsx'
 import Header from './components/layout/Header'
 import Sidebar from './components/layout/Sidebar'
 import Footer from './components/layout/Footer'
+import TicketForm from './components/tickets/TicketForm'
+import AirportList from "./components/airports/AirportList"
+import AirportDetails from "./components/airports/AirportDetails"
+import AirportForm from "./components/airports/AirportForm"
+
 
 import Home from './pages/Home'
 import Tickets from './pages/Tickets'
@@ -43,6 +48,11 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/tickets" element={<Tickets />} />
+                <Route path="/tickets/new" element={<TicketForm />} />
+                <Route path="/tickets/:id" element={<TicketForm />} />
+                <Route path="/airports" element={<AirportList />} />
+                <Route path="/airports/new" element={<AirportDetails />} />
+                <Route path="/airports/:id" element={<AirportDetails />} />
               </Routes>
               <Footer />
             </Box>

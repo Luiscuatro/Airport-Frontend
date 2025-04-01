@@ -14,6 +14,10 @@ import {
 } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useTickets } from '../../hooks/useTickets'
+import Button from '@mui/material/Button'
+import { Link } from 'react-router-dom'
+
+
 
 console.log('TicketList montado')
 
@@ -35,16 +39,17 @@ const TicketList = () => {
         Tickets List
       </Typography>
 
-      return (
-    <div style={{ color: 'red', fontSize: '30px' }}>
-    TicketList cargado
-    </div>
-)
-
-
       {loading ? (
         <Box display="flex" justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
           <CircularProgress />
+          <Button
+         variant="contained"
+         component={Link}
+         to="/tickets/new"
+        >
+          Crear ticket
+        </Button>
+
         </Box>
       ) : (
         <TableContainer>
