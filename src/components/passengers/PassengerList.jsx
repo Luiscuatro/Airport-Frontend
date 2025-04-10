@@ -11,23 +11,23 @@ import {
   CircularProgress
 } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { useAirport } from '../../hooks/useAirport'
+import { usePassengers } from '../../hooks/usePassengers'
 
-const AirportList = () => {
-  const { airports, loading, error } = useAirport()
+const PassengerList = () => {
+  const { passengers, loading, error } = usePassengers()
 
   if (loading) return <CircularProgress />
-  if (error) return <p>Error cargando aeropuertos: {error.message}</p>
+  if (error) return <p>Error cargando pasajeros: {error.message}</p>
 
   return (
     <div>
       <Button
         variant="contained"
         component={Link}
-        to="/airports/new"
+        to="/passengers/new"
         style={{ marginBottom: '1rem' }}
       >
-        Crear Aeropuerto
+        Crear Pasajero
       </Button>
 
       <TableContainer component={Paper}>
@@ -35,18 +35,16 @@ const AirportList = () => {
           <TableHead>
             <TableRow>
               <TableCell>Nombre</TableCell>
-              <TableCell>Ciudad</TableCell>
-              <TableCell>País</TableCell>
-              <TableCell>Código</TableCell>
+              <TableCell>Apellido</TableCell>
+              <TableCell>Email</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {airports.map((airport) => (
-              <TableRow key={airport.id}>
-                <TableCell>{airport.name}</TableCell>
-                <TableCell>{airport.city}</TableCell>
-                <TableCell>{airport.country}</TableCell>
-                <TableCell>{airport.code}</TableCell>
+            {passengers.map((passenger) => (
+              <TableRow key={passenger.id}>
+                <TableCell>{passenger.firstName}</TableCell>
+                <TableCell>{passenger.lastName}</TableCell>
+                <TableCell>{passenger.email}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -56,4 +54,4 @@ const AirportList = () => {
   )
 }
 
-export default AirportList
+export default PassengerList
